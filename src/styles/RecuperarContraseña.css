@@ -1,0 +1,52 @@
+.container{
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px 30px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+.title{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+.logoUnimayor{
+    width: 32px;
+    height: 32px;
+  }
+.form{
+    display: flex;
+    flex-direction: column;
+  }
+.label{
+    margin-bottom: 15px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+  }
+.input{
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+.button{
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #0796aa;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+.footer{
+    margin-top: 30px;
+    font-size: 14px;
+    text-align: center;
+    color: #555;
+  }
