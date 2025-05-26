@@ -1,0 +1,70 @@
+/* Reset básico */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Barra superior */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e5e7eb;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-button {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Navegación */
+.navbar {
+  background-color: #ecf4f8;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  border-bottom: 2px solid #ccc;
+}
+
+.navbar a {
+  background-color: white;
+  border-radius: 9999px;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+}
+
+.navbar a.active {
+  background-color: #2563eb;
+  color: white;
+}
+
+/* Contenido principal */
+.main-content {
+  padding: 20px;
+}

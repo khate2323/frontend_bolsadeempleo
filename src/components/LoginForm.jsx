@@ -2,6 +2,7 @@ import('../styles/Login.css')
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { apiService } from "../services/api.service";
 
 function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
@@ -9,12 +10,26 @@ function LoginForm() {
   const [password, setPassword] = useState("");
   const [rolSeleccionado, setRolSeleccionado] = useState("egresado");
 
-  const handleSubmit = (e) => {
+  const navigate = useNavigate();
+
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log({ rolSeleccionado, documento, password });
+
+    try {
+      const respuesta = await apiService.post("/auth/login", { login: documento, password: password }, false)
+      if (respuesta.status === 200) {
+        console.log("respuesta", respuesta);
+
+        localStorage.setItem("accessToken", respuesta.data.data.accessToken)
+        localStorage.setItem("refreshToken", respuesta.data.data.refreshToken)
+        navigate('home-empresa')
+      }
+    } catch (error) {
+      alert(error.response.data.message)
+    }
   };
 
-  const navigate = useNavigate();
 
   return (
     <div className="wrapper">
@@ -40,25 +55,25 @@ function LoginForm() {
             {/* Botones de rol */}
             <div className="rolButtonWrapper">
               <button
-              className="rolButton bgempresa"
+                className="rolButton bgempresa"
                 type="button"
                 onClick={() => setRolSeleccionado("egresado")}
-              
+
               >
                 Egresado
               </button>
               <button
-              className="rolButton bgegresado"
+                className="rolButton bgegresado"
                 type="button"
                 onClick={() => {
-                    setRolSeleccionado("empresa");
-                    navigate("LoginEmpresa");
+                  setRolSeleccionado("empresa");
+                  navigate("LoginEmpresa");
                 }}
-              
-            >
+
+              >
                 Empresa
-                </button>
-            </div>  
+              </button>
+            </div>
 
             {/* Campo de identificación */}
             <input
@@ -93,9 +108,6 @@ function LoginForm() {
             <button
               type="submit"
               className="loginButton"
-              onClick={() => {
-                navigate("Perfil");
-              }}
             >
               Ingresar
             </button>
