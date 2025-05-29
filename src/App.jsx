@@ -12,6 +12,8 @@ import HomeEgresadoPage from "./pages/egresado/home_egresado";
 import HojaDeVida from "./pages/egresado/cv";
 import ListaVacantes from "./pages/egresado/visualizar-vacantes";
 import DetalleVacante from "./pages/egresado/detalle-vacante";
+import SessionGuard from "./middlewares/auth.midleware";
+import MisPostulacionesPage from "./pages/egresado/mis-postulaciones";
 
 function App() {
   return (
@@ -28,7 +30,8 @@ function App() {
           <Route path="revisar-publicaciones" element={<MisOfertasPage />} />
           <Route path="/home-egresado" element={<HomeEgresadoPage />} />
           <Route path="hoja-de-vida" element={<HojaDeVida />} />
-          <Route path="visualizar-vacantes" element={<ListaVacantes/>} />
+          <Route path="mis-postulaciones" element={<MisPostulacionesPage />} />
+          <Route path="visualizar-vacantes" element={<ListaVacantes />} />
           <Route path="/vacantes/:id" element={<DetalleVacante />} />
 
           {/* Aquí puedes ir agregando más rutas que compartan el layout */}

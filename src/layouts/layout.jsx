@@ -1,8 +1,11 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
 import "../styles/layout.css";
+import { usePermissions } from "../context/permissions.context";
+import { useEffect } from "react";
 
 export function Layout() {
   const location = useLocation();
+  const { isCompany, isGraduated, isAdmin } = usePermissions();
 
   return (
     <div>
@@ -39,36 +42,56 @@ export function Layout() {
         >
           🏠 Mi área
         </Link>
-        <Link
-          to="/publicar-vacantes"
-          className={location.pathname === "/publicar-vacantes" ? "active" : ""}
-        >
-          📤 Publicar vacantes
-        </Link>
-        <Link
-          to="/revisar-publicaciones"
-          className={
-            location.pathname === "/revisar-publicaciones" ? "active" : ""
-          }
-        >
-          📄 Revisar publicaciones
-        </Link>
-        <Link
-          to="/hoja-de-vida"
-          className={
-            location.pathname === "/hoja-de-vida" ? "active" : ""
-          }
-        >
-          🧾 Hoja de vida
-        </Link>
-        <Link
-          to="/hoja-de-vida"
-          className={
-            location.pathname === "/hoja-de-vida" ? "active" : ""
-          }
-        >
-          📌 Mis postulaciones
-        </Link>
+        {
+          isCompany && (
+            <Link
+              to="/publicar-vacantes"
+              className={location.pathname === "/publicar-vacantes" ? "active" : ""}
+            >
+              📤 Publicar vacantes
+            </Link>
+          )
+        }
+
+        {
+          isCompany && (
+            <Link
+              to="/revisar-publicaciones"
+              className={
+                location.pathname === "/revisar-publicaciones" ? "active" : ""
+              }
+            >
+              📄 Revisar publicaciones
+            </Link>
+          )
+        }
+
+        {
+          isGraduated && (
+            <Link
+              to="/hoja-de-vida"
+              className={
+                location.pathname === "/hoja-de-vida" ? "active" : ""
+              }
+            >
+              🧾 Hoja de vida
+            </Link>
+          )
+        }
+
+        {
+          isGraduated && (
+            <Link
+              to="/mis-postulaciones"
+              className={
+                location.pathname === "/mis-postulaciones" ? "active" : ""
+              }
+            >
+              📌 Mis postulaciones
+            </Link>
+          )
+        }
+
         <Link
           to="/visualizar-vacantes"
           className={
@@ -77,6 +100,8 @@ export function Layout() {
         >
           💼 Visualizar vacantes
         </Link>
+
+
       </nav>
 
       {/* Contenido dinámico */}

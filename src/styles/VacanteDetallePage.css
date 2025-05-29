@@ -1,0 +1,86 @@
+.detalle-vacante {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  font-family: "Segoe UI", sans-serif;
+  color: #2c3e50;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.detalle-vacante h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #1e3a8a;
+}
+
+.subinfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+.info-principal {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.datos p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+}
+
+.acciones {
+  align-self: start;
+}
+
+.btn-postularse {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-postularse:hover {
+  background-color: #1d4ed8;
+}
+
+.descripcion {
+  margin-top: 1.5rem;
+}
+
+.descripcion h2,
+.descripcion h3 {
+  color: #1f2937;
+  margin-top: 1.2rem;
+}
+
+.descripcion p {
+  margin-top: 0.5rem;
+  line-height: 1.6;
+}
+
+.descripcion ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+.descripcion li {
+  margin: 0.4rem 0;
+  font-size: 1rem;
+  color: #374151;
+}
