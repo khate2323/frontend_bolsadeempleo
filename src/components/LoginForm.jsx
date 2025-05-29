@@ -11,8 +11,7 @@ function LoginForm() {
   const [rolSeleccionado, setRolSeleccionado] = useState("egresado");
 
   const navigate = useNavigate();
-
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -23,7 +22,7 @@ function LoginForm() {
 
         localStorage.setItem("accessToken", respuesta.data.data.accessToken)
         localStorage.setItem("refreshToken", respuesta.data.data.refreshToken)
-        navigate('home-empresa')
+        navigate('/home-egresado')
       }
     } catch (error) {
       alert(error.response.data.message)

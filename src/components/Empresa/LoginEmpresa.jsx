@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import("../../styles/Login.css")
+import { apiService } from "../../services/api.service";
 
 
 
@@ -11,15 +12,26 @@ function LoginFormEmpresa() {
   const [password, setPassword] = useState("");
   const [rolSeleccionado, setRolSeleccionado] = useState("egresado");
 
+    const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log({ rolSeleccionado, documento, password });
-  };
-
-  const navigate = useNavigate();
-
-
+  
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+  
+      try {
+        const respuesta = await apiService.post("/auth/login", { login: documento, password: password }, false)
+        if (respuesta.status === 200) {
+          console.log("respuesta", respuesta);
+  
+          localStorage.setItem("accessToken", respuesta.data.data.accessToken)
+          localStorage.setItem("refreshToken", respuesta.data.data.refreshToken)
+          navigate('/home-empresa')
+        }
+      } catch (error) {
+        alert(error.response.data.message)
+      }
+    };
+  
   return (
     <div className="wrapper">
       <div className="card">

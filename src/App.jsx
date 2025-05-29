@@ -3,12 +3,15 @@ import LoginForm from "./components/LoginForm";
 import LoginFormEmpresa from "./components/Empresa/LoginEmpresa";
 import RegistroEmpresaForm from "./components/Empresa/RegistroEmpresa";
 import PasswordResetForm from "./components/recuperarcontraseña";
-import MiArea from "./pages/MiArea";
-import('./styles/Login.css')
-import { Layout } from './layouts/layout'
+import("./styles/Login.css");
+import { Layout } from "./layouts/layout";
 import CrearOfertaPage from "./pages/empresa/crear-oferta";
 import HomePage from "./pages/empresa/home";
 import MisOfertasPage from "./pages/empresa/mis-ofertas";
+import HomeEgresadoPage from "./pages/egresado/home_egresado";
+import HojaDeVida from "./pages/egresado/cv";
+import ListaVacantes from "./pages/egresado/visualizar-vacantes";
+import DetalleVacante from "./pages/egresado/detalle-vacante";
 
 function App() {
   return (
@@ -21,9 +24,13 @@ function App() {
 
         <Route path="/" element={<Layout />}>
           <Route path="/home-empresa" element={<HomePage />} />
-          <Route path="Perfil" element={<MiArea />} />
           <Route path="publicar-vacantes" element={<CrearOfertaPage />} />
           <Route path="revisar-publicaciones" element={<MisOfertasPage />} />
+          <Route path="/home-egresado" element={<HomeEgresadoPage />} />
+          <Route path="hoja-de-vida" element={<HojaDeVida />} />
+          <Route path="visualizar-vacantes" element={<ListaVacantes/>} />
+          <Route path="/vacantes/:id" element={<DetalleVacante />} />
+
           {/* Aquí puedes ir agregando más rutas que compartan el layout */}
         </Route>
       </Routes>
