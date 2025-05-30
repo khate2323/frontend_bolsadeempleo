@@ -41,8 +41,8 @@ export function Layout() {
             <div className="menu-dropdown">
               {isGraduated && (
                 <>
-                  <Link to="/hoja-de-vida" onClick={() => setMenuOpen(false)}>🧾 Hoja de vida</Link>
-                  <Link to="/mis-postulaciones" onClick={() => setMenuOpen(false)}>📌 Mis postulaciones</Link>
+                  <Link to="/hoja-de-vida" className={location.pathname === "/hoja-de-vida" ? "active" : ""} onClick={() => setMenuOpen(false)}>🧾 Hoja de vida</Link>
+                  <Link to="/mis-postulaciones" className={location.pathname === "/mis-postulaciones" ? "active" : ""} onClick={() => setMenuOpen(false)}>📌 Mis postulaciones</Link>
                 </>
               )}
               <Link to="/configuracion" onClick={() => setMenuOpen(false)}>⚙️ Configuración</Link>
@@ -71,10 +71,10 @@ export function Layout() {
         {isGraduated && (
           <>
             <Link to="/home-egresado" className={location.pathname === "/home-egresado" ? "active" : ""}>
-                🏠 Mi área
-              </Link>
-            <Link to="/hoja-de-vida" onClick={() => setMenuOpen(false)}>🧾 Hoja de vida</Link>
-            <Link to="/mis-postulaciones" onClick={() => setMenuOpen(false)}>📌 Mis postulaciones</Link>
+              🏠 Mi área
+            </Link>
+            <Link to="/hoja-de-vida" className={location.pathname === "/hoja-de-vida" ? "active" : ""} onClick={() => setMenuOpen(false)}>🧾 Hoja de vida</Link>
+            <Link to="/mis-postulaciones" className={location.pathname === "/mis-postulaciones" ? "active" : ""} onClick={() => setMenuOpen(false)}>📌 Mis postulaciones</Link>
             <Link to="/visualizar-vacantes" className={location.pathname === "/visualizar-vacantes" ? "active" : ""}>
               💼 Vacantes
             </Link>
