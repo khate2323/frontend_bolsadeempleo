@@ -1,13 +1,24 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "../../styles/VacanteDetallePage.css";
+import { usePermissions } from "../../context/permissions.context";
+import { apiService } from "../../services/api.service";
 
 export default function DetalleVacante() {
   const { id } = useParams();
   const [vacante, setVacante] = useState(null);
+  const { isCompany, isGraduated, isAdmin } = usePermissions();
+
 
   useEffect(() => {
-    // Simulación de datos - puedes reemplazarlo con una llamada real al backend
+    const fetch = async () => {
+      const response = await apiService.get(`/offerts/get-single/${id}`)
+      console.log("response", response);
+
+    }
+
+    fetch()
+    
     setVacante({
       id,
       titulo: "Desarrollador Frontend",
@@ -46,8 +57,14 @@ export default function DetalleVacante() {
         </div>
 
         <div className="acciones">
-          <button className="btn-postularse">Postularme</button>
+          {isGraduated && (
+            <button className="btn-postularse">Postularme</button>
+          )}
+          {isCompany && (
+            <button className="btn-ver-postulantes">👀 Ver postulantes</button>
+          )}
         </div>
+
       </div>
 
       <div className="descripcion">

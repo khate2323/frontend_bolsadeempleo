@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginForm from "./components/LoginForm";
-import LoginFormEmpresa from "./components/Empresa/LoginEmpresa";
 import RegistroEmpresaForm from "./components/Empresa/RegistroEmpresa";
 import PasswordResetForm from "./components/recuperarcontraseña";
 import("./styles/Login.css");
@@ -20,7 +19,6 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginForm />} />
-        <Route path="LoginEmpresa" element={<LoginFormEmpresa />} />
         <Route path="RegistroEmpresa" element={<RegistroEmpresaForm />} />
         <Route path="Recuperar" element={<PasswordResetForm />} />
 

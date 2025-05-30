@@ -1,0 +1,111 @@
+.publicaciones-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.publicaciones-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.no-publicaciones {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #777;
+}
+
+.card-publicacion {
+  background-color: #fff;
+  border: 1px solid #e1e1e1;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.card-publicacion:hover {
+  transform: translateY(-3px);
+}
+
+.info h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.info p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.estado {
+  margin-top: 0.75rem;
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.estado.activa {
+  background-color: #e6ffec;
+  color: #2e7d32;
+  border: 1px solid #b2dfdb;
+}
+
+.estado.inactiva {
+  background-color: #ffe6e6;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+}
+
+.acciones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.acciones button {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.ver {
+  background-color: #2196f3;
+  color: white;
+}
+
+.btn-action {
+  outline: none;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.editar {
+  background-color: #ff9800;
+  color: white;
+}
+
+.eliminar {
+  background-color: #f44336;
+  color: white;
+}
+
+.acciones button:hover {
+  opacity: 0.85;
+}

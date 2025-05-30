@@ -84,3 +84,19 @@
   font-size: 1rem;
   color: #374151;
 }
+
+.btn-ver-postulantes {
+  background-color: #059669;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-ver-postulantes:hover {
+  background-color: #047857;
+}

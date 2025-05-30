@@ -29,68 +29,73 @@ export default function CrearOfertaPage() {
         <div className="form-container">
             <h2>Formulario publicación de vacantes</h2>
             <form onSubmit={handleSubmit(guardar)} className="vacante-form">
-                <label>
-                    Título del cargo:
-                    <input type="text" name="title" {...register('title')} />
-                    <span className="icon">💼</span>
-                </label>
+  <h2>📄 Publicación de Vacante</h2>
 
-                <label>
-                    Número de vacantes:
-                    <input type="number" name="vacancies" {...register('vacancies')} />
-                    <span className="icon">👥</span>
-                </label>
+  <div className="form-field">
+    <label>Título del cargo</label>
+    <div className="input-wrapper">
+      <input type="text" {...register('title')} />
+      <span className="icon">💼</span>
+    </div>
+  </div>
 
-                <label>
-                    Tipo de contrato:
-                    <input type="text" name="employment_type"  {...register('employment_type')} />
-                    <span className="icon">📄</span>
-                </label>
+  <div className="form-field">
+    <label>Número de vacantes</label>
+    <div className="input-wrapper">
+      <input type="number" {...register('vacancies')} />
+      <span className="icon">👥</span>
+    </div>
+  </div>
 
-                <label>
-                    Jornada laboral:
-                    <input type="text" name="modality"  {...register('modality')} />
-                    <span className="icon">🗓️</span>
-                </label>
+  <div className="form-row">
+    <div className="form-field">
+      <label>Tipo de contrato</label>
+      <input type="text" {...register('employment_type')} />
+    </div>
+    <div className="form-field">
+      <label>Jornada laboral</label>
+      <input type="text" {...register('modality')} />
+    </div>
+  </div>
 
-                <label>
-                    Ubicación del trabajo:
-                    <input type="text" name="location" {...register('location')} />
-                    <span className="icon">📍</span>
-                </label>
+  <div className="form-field">
+    <label>Ubicación del trabajo</label>
+    <input type="text" {...register('location')} />
+  </div>
 
-                <label className="description-label">
-                    Descripción:
-                    <textarea name="description" rows="3" {...register('description')} />
-                </label>
+  <div className="form-field">
+    <label>Descripción</label>
+    <textarea rows="3" {...register('description')} />
+  </div>
 
-                <label>
-                    Salario mínimo:
-                    <input type="number" name="salary_min" {...register('salary_min')} />
-                </label>
+  <div className="form-row">
+    <div className="form-field">
+      <label>Salario mínimo</label>
+      <input type="number" {...register('salary_min')} />
+    </div>
+    <div className="form-field">
+      <label>Salario máximo</label>
+      <input type="number" {...register('salary_max')} />
+    </div>
+    <div className="form-field">
+      <label>Moneda</label>
+      <input type="text" {...register('currency')} />
+    </div>
+  </div>
 
-                <label>
-                    Salario máximo:
-                    <input type="number" name="salary_max" {...register('salary_max')} />
-                </label>
+  <div className="form-field">
+    <label>Requisitos</label>
+    <textarea rows="2" {...register('requirements')} />
+  </div>
 
-                <label>
-                    Moneda:
-                    <input type="text" name="currency" {...register('currency')} />
-                </label>
+  <div className="form-field">
+    <label>Responsabilidades</label>
+    <textarea rows="2" {...register('responsibilities')} />
+  </div>
 
-                <label>
-                    Requisitos:
-                    <textarea name="requirements" rows="2" {...register('requirements')} />
-                </label>
+  <button type="submit">🚀 Publicar Oferta</button>
+</form>
 
-                <label>
-                    Responsabilidades:
-                    <textarea name="responsibilities" rows="2"  {...register('responsibilities')} />
-                </label>
-
-                <button type="submit">Publicar</button>
-            </form>
         </div>
     )
 }
