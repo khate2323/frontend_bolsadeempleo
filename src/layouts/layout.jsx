@@ -54,11 +54,12 @@ export function Layout() {
 
       {/* Navbar */}
       <nav className="layout-navbar">
-        <Link to="/home-empresa" className={location.pathname === "/home-empresa" ? "active" : ""}>
-          🏠 Mi área
-        </Link>
+
         {isCompany && (
           <>
+            <Link to="/home-empresa" className={location.pathname === "/home-empresa" ? "active" : ""}>
+              🏠 Mi área
+            </Link>
             <Link to="/publicar-vacantes" className={location.pathname === "/publicar-vacantes" ? "active" : ""}>
               📤 Publicar vacantes
             </Link>
@@ -68,9 +69,16 @@ export function Layout() {
           </>
         )}
         {isGraduated && (
-          <Link to="/visualizar-vacantes" className={location.pathname === "/visualizar-vacantes" ? "active" : ""}>
-            💼 Vacantes
-          </Link>
+          <>
+            <Link to="/home-egresado" className={location.pathname === "/home-egresado" ? "active" : ""}>
+                🏠 Mi área
+              </Link>
+            <Link to="/hoja-de-vida" onClick={() => setMenuOpen(false)}>🧾 Hoja de vida</Link>
+            <Link to="/mis-postulaciones" onClick={() => setMenuOpen(false)}>📌 Mis postulaciones</Link>
+            <Link to="/visualizar-vacantes" className={location.pathname === "/visualizar-vacantes" ? "active" : ""}>
+              💼 Vacantes
+            </Link>
+          </>
         )}
       </nav>
 

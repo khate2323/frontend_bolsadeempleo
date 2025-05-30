@@ -12,6 +12,8 @@ export const PermissionsProvider = ({ children }) => {
     const permissions = useMemo(() => {
         if (!user) return {};
 
+        console.log(user.role_name);
+        
         switch (user.role_name) {
             case 'EMPRESA':
                 return {

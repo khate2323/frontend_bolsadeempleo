@@ -5,6 +5,13 @@
   box-sizing: border-box;
 }
 
+.flex{
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+
+}
+
 body, html {
   font-family: 'Segoe UI', sans-serif;
   background-color: #f1f5f9;

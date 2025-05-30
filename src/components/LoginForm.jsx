@@ -25,15 +25,18 @@ function LoginForm() {
         localStorage.setItem("refreshToken", respuesta.data.data.refreshToken)
 
         if (respuesta.data.data.user.role_name === 'EMPRESA') {
-          navigate('/home-empresa')
+          // navigate('/home-empresa')
+          window.location.href='/home-empresa'
           return
         }
         if (respuesta.data.data.user.role_name === 'EGRESADO') {
-          navigate('/home-egresado')
+          // navigate('/home-egresado')
+          window.location.href='/home-egresado'
           return
         }
         if (respuesta.data.data.user.role_name === 'ADMINISTRADOR') {
-          navigate('/home-admin')
+          // navigate('/home-admin')
+          window.location.href='/home-admin'
           return
         }
 
